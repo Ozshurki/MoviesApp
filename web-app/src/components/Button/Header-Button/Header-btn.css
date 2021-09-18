@@ -1,0 +1,122 @@
+.hdr-btn{
+    color: #000;
+    width: 100px;
+    height: 40px;
+    padding-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-decoration: none;
+    float: left;
+    transition: all .5s ease;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    text-align: center;
+    background: transparent;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hdr-btn:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 100%;
+    border-bottom: 3px solid transparent;
+    border-left: 3px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(100%);
+}
+
+.hdr-btn:after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 4px;
+    width: 100%;
+    border-top: 3px solid transparent;
+    border-right: 3px solid transparent;
+    box-sizing: border-box;
+    transform: translateX(-100%);
+}
+
+.hdr-btn:hover{
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+.hdr-btn:hover:before{
+    border-color: #262626;
+    height: 100%;
+    transform: translateX(0);
+    transition: .1s transform linear, .3s height linear .1s;
+}
+
+.hdr-btn:hover:after{
+    border-color: #262626;
+    height: 100%;
+    transform: translateX(0);
+    transition: .1s transform linear, .3s height linear .1s;
+}
+
+ul{
+display: inline-flex;
+}
+li{
+    list-style-type: none;
+    padding-left: 100px;
+}
+
+@media (max-width: 600px) {
+    .hdr-btn{
+        color:white;
+        font-weight: 300;
+        margin-top: 15px;
+        border: none;
+    }
+
+    .hdr-btn:before{
+        position: absolute;
+        content: '';
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        width: 100%;
+        border-bottom: none;
+        border-left: none;
+        box-sizing: border-box;
+        transform: translateX(100%);
+    }
+
+    .hdr-btn:after{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        border-top: none;
+        border-right: none;
+        box-sizing: border-box;
+        transform: none;
+    }
+
+    .hdr-btn:hover{
+        box-shadow: none;
+    }
+    .hdr-btn:hover:before{
+        border-color: #262626;
+        height: 100%;
+        transform: none;
+        transition: none;
+    }
+
+    .hdr-btn:hover:after{
+        border-color: #262626;
+        height: 100%;
+        transform: none;
+        transition: none;
+    }
+}

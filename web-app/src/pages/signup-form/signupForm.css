@@ -1,0 +1,137 @@
+.container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.signup-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 100px 200px;
+    background-color: white;
+    box-shadow: 0 0 30px -5px;
+}
+
+.register-title{
+    display: flex;
+    width: 100%;
+    height: 10%;
+    font-size: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.firstName-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.firstName-field{
+    width: 85%;
+    height: 40%;
+    border-radius: 10px;
+    border:2px solid black;
+}
+
+.lastName-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.lastName-field{
+    width: 85%;
+    height: 40%;
+    border-radius: 10px;
+    border:2px solid black;
+}
+
+.confirmPassword-container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.confirmPassword-field{
+    width: 85%;
+    height: 40%;
+    border-radius: 10px;
+    border:2px solid black;
+}
+label{
+    font-size: 20px;
+    width:100%;
+    justify-content: center;
+    padding: 10px 15px 0 35px;
+    margin-top: 5px;
+}
+
+.firstName-error{
+    color: red;
+    font-size: 20px;
+}
+
+.lastName-error{
+    color: red;
+    font-size: 20px;
+}
+
+.email-error{
+    color: red;
+    font-size: 20px;
+}
+
+.password-error{
+    color: red;
+    font-size: 20px;
+}
+
+.confirmPassword-error{
+    color: red;
+    font-size: 20px;
+}
+
+.submit-btn{
+    margin-left: 5px;
+    width: 25%;
+    height: 95%;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: black;
+    color:white;
+    border: none;
+    opacity: 0.8;
+}
+
+.submit-btn:hover{
+    color: white;
+    background-color: darkseagreen;
+}
+
+.reset-btn{
+    margin-left: 5px;
+    width: 25%;
+    height: 95%;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: black;
+    opacity: 0.8;
+    border: none;
+    color:white;
+}
+.reset-btn:hover{
+    color: white;
+    background-color: darkseagreen;
+}
