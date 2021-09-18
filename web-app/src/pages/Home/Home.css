@@ -1,12 +1,17 @@
 .home {
-    position: absolute;
+    position: relative;
+    display: flex;
     width: 100%;
-    height: 90%;
+    height: 100%;
     flex-wrap: wrap;
 }
 
+.main-container{
+    display: flex;
+    margin-top: 75px;
+}
 @media (max-width: 600px){
     .home{
-        height: 100%;
+    top: 10px;
     }
 }
