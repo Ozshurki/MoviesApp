@@ -3,8 +3,11 @@
     width: 10%;
     background-color: black;
     overflow: hidden;
-    opacity: 0.8;
     box-shadow: 0 0 30px -5px;
+    border: 1px inset white;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
 }
 
 .nav-bar {
