@@ -4,9 +4,9 @@ import "./SideMenu.css"
 
 const SideMenu: React.FC = () => {
     return (
-        <section className='side-menu'>
+        <div className='side-menu'>
             <NavBar/>
-        </section>
+        </div>
     )
 }
 

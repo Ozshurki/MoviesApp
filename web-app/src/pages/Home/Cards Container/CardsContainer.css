@@ -1,8 +1,5 @@
 .cards-container{
     display: flex;
-    position: absolute;
-    top:0;
-    right: 0;
     flex-wrap: wrap;
     width: 90%;
     height: 100%;
@@ -13,9 +10,8 @@
 
 @media (max-width: 600px){
     .cards-container{
-        height: 100%;
-        width: 100%;
         align-content: space-evenly;
+        width: 100%;
 
     }
 }
