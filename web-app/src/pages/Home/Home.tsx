@@ -7,12 +7,13 @@ import CardsContainer from "./Cards Container/CardsContainer";
 const Home: React.FC = () => {
     return (
         <div className='home'>
-            <Header/>
+            <div className="header-container">
+                <Header/>
+            </div>
             <div className="main-container">
                 <SideMenu/>
                 <CardsContainer/>
             </div>
-
         </div>
     )
 }

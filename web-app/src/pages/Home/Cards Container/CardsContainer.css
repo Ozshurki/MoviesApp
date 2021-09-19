@@ -1,17 +1,21 @@
 .cards-container{
     display: flex;
+    position: absolute;
+    top:0;
+    right: 0;
     flex-wrap: wrap;
-    width: 88%;
-    left: 100px;
-    height: 98%;
-    padding: 15px 50px 0 50px;
+    width: 90%;
+    height: 100%;
     background-color: white;
-    justify-content: space-between;
+    justify-content: space-evenly;
+
 }
 
 @media (max-width: 600px){
     .cards-container{
-        left:0;
         height: 100%;
+        width: 100%;
+        align-content: space-evenly;
+
     }
 }
