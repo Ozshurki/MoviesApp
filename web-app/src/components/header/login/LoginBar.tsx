@@ -1,28 +1,25 @@
 import React, {useContext, useState} from 'react'
-import {Link} from "react-router-dom";
 import HeaderBtn from "../../Button/Header-Button/Header-btn";
-import loginForm from "../../../pages/login-form/LoginForm";
 import MobileNavbar from "../../Mobile-navbar/Mobile-navbar";
 import {AuthContext} from "../../../shared/context/AuthContext";
-import {ToggleButton} from "../../../shared/context/ButtonContext";
 
 const LoginBar: React.FC = () => {
 
-    const hamburgerButton = useContext(ToggleButton);
     const auth = useContext(AuthContext);
+    const [isPressed, setIsPressed] = useState(false);
 
-    const [pressed, setIsPressed] = useState(false);
+    const toggleBtn = () =>{
+        setIsPressed(!isPressed);
+    };
 
     return (
         <React.Fragment>
-            <div className="toggle-button">
+            <div className="toggle-button" onClick={toggleBtn}>
                 <span className="bar"> </span>
                 <span className="bar"> </span>
                 <span className="bar"> </span>
             </div>
-            {hamburgerButton.isPressed && <MobileNavbar/>}
-            {!hamburgerButton.isPressed && <div
-                className={hamburgerButton.isPressed ? 'mobile-navbar' : 'login-bar'}>
+            <div className='login-bar'>
                 <ul>
                     {!auth.isLoggedIn &&
                         <li><HeaderBtn btnName="Login" route="/login"/></li>}
@@ -31,7 +28,8 @@ const LoginBar: React.FC = () => {
                     {auth.isLoggedIn &&
                         <li><HeaderBtn btnName="Logout" route="/"/></li>}
                 </ul>
-            </div>}
+            </div>
+            {isPressed && <MobileNavbar/>}
 
         </React.Fragment>
     )
