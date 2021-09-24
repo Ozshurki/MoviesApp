@@ -9,7 +9,7 @@ import "./Header.css";
 const Header: React.FC = () => {
     return (
         <header className='header'>
-            <Link to="/" className='header-title'>My Web App</Link>
+            <Link to="/" className='header-title'>My Movies App</Link>
             <LoginBar />
         </header>
     )

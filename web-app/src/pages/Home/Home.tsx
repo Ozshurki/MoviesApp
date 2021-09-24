@@ -3,6 +3,7 @@ import Header from "../../components/header/Header";
 import "./Home.css"
 import SideMenu from "../../components/Side Menu/SideMenu";
 import CardsContainer from "./Cards Container/CardsContainer";
+import FilterBar from "../../components/FilterBar/FilterBar";
 
 const Home: React.FC = () => {
     return (
@@ -11,8 +12,13 @@ const Home: React.FC = () => {
                 <Header/>
             </div>
             <div className="main-container">
-                <SideMenu/>
-                <CardsContainer/>
+                <div className="filter">
+                    <FilterBar/>
+                </div>
+                <div className="cards">
+                    <CardsContainer/>
+                </div>
+
             </div>
         </div>
     )

@@ -28,7 +28,7 @@ app.use((error,req,res,next)=>{
 
 
 // Connection to DataBase
-mongoose.connect('mongodb+srv://ozshurki:ozshu123@cluster0.tkjon.mongodb.net/Users?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://ozshurkiozshu123@cluster0.tkjon.mongodb.net/Users?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

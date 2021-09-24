@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link, useRouteMatch} from "react-router-dom";
+import {Link} from "react-router-dom";
 import "./Header-btn.css"
 
 
@@ -9,7 +9,6 @@ interface ButtonInt{
 }
 const HeaderBtn: React.FC<ButtonInt> = ({btnName, route}:ButtonInt) =>{
 
-    const {url} = useRouteMatch();
     return(
         <Link to={route} className='hdr-btn'>{btnName}</Link>
     )

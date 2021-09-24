@@ -1,5 +1,6 @@
-import React, {useState, useCallback, useContext} from 'react';
+import React, {useState, useCallback} from 'react';
 import Home from "./pages/Home/Home";
+import Cart from "./pages/Cart/Cart";
 import {Route, Switch, BrowserRouter, Redirect} from 'react-router-dom';
 import LoginForm from "./pages/login-form/LoginForm";
 import RegisterForm from "./pages/signup-form/signupForm";
@@ -7,9 +8,9 @@ import {AuthContext} from "./shared/context/AuthContext";
 
 const App: React.FC = () => {
 
-
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
-    const [isPressed, setIsPressed] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userId, setUserId] = useState(false);
+    const [token, setToken] = useState(false);
 
     const login = useCallback(() => {
         setIsLoggedIn(true);
@@ -18,16 +19,12 @@ const App: React.FC = () => {
         setIsLoggedIn(false);
     }, []);
 
-    const toggleButton = useCallback(()=>{
-        setIsPressed(!isPressed);
-    },[isPressed]);
-
     const contextValue = {
         isLoggedIn: isLoggedIn,
+        userId: userId,
+        token: token,
         login: login,
         logout: logout,
-        isPressed: isPressed,
-        toggleButton: toggleButton
     }
     return (
         <AuthContext.Provider
@@ -46,6 +43,7 @@ const App: React.FC = () => {
                             <RegisterForm/>
                         </Route>
                         <Route path="/cart">
+                            <Cart/>
                         </Route>
                         <Redirect to="/" from="*"/>
                     </Switch>

@@ -1,0 +1,15 @@
+.cart-page{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+
+.header-container{
+    position: fixed;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    z-index: 1;
+}

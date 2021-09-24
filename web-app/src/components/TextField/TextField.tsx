@@ -17,7 +17,7 @@ const TextField: React.FC<TextValues> = ({fieldName, fieldText, placeholder, err
     }
     return (
         <div className={fieldName + '-container'}>
-            <label htmlFor={fieldName}>{fieldText}:</label>
+            <label htmlFor={fieldName}>{fieldText}</label>
             <br/>
             <Field className={fieldName + '-field'}
                    id={fieldName}

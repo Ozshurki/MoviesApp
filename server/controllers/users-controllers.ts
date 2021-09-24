@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const saltRound: number = 12;
 const jwt = require('jsonwebtoken');
 const HttpError = require('../models/http-error');
-const PRIVATE_KEY = "privateKey123";
+export const PRIVATE_KEY = "privateKey123";
 
 //************** Middleware functions ****************
 
