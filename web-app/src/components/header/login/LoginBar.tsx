@@ -21,11 +21,11 @@ const LoginBar: React.FC = () => {
             </div>
             <div className='login-bar'>
                 <ul>
-                    {!auth.isLoggedIn &&
+                    {!auth?.isLoggedIn &&
                         <li><HeaderBtn btnName="Login" route="/login"/></li>}
-                    {auth.isLoggedIn &&
+                    {auth?.isLoggedIn &&
                         <li><HeaderBtn btnName="My cart" route="/cart"/></li>}
-                    {auth.isLoggedIn &&
+                    {auth?.isLoggedIn &&
                         <li><HeaderBtn btnName="Logout" route="/"/></li>}
                 </ul>
             </div>

@@ -8,28 +8,28 @@ import {AuthContext} from "./shared/context/AuthContext";
 
 const App: React.FC = () => {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const [userId, setUserId] = useState(false);
-    const [token, setToken] = useState(false);
+    const [token, setToken] = useState<string | null>(null);
+    const [userId, setUserId] = useState<string | null>(null);
 
-    const login = useCallback(() => {
-        setIsLoggedIn(true);
+    const login = useCallback((token:string, uid:string) => {
+        setToken(token);
+        setUserId(uid);
     }, []);
+
     const logout = useCallback(() => {
-        setIsLoggedIn(false);
+        setToken(null);
+        setUserId(null)
     }, []);
 
-    const contextValue = {
-        isLoggedIn: isLoggedIn,
+    const contextValues = {
         userId: userId,
         token: token,
+        isLoggedIn: !!token,
         login: login,
-        logout: logout,
+        logout: logout
     }
     return (
-        <AuthContext.Provider
-            // Value will listening for isLoggedIn state changes
-            value={contextValue}>
+        <AuthContext.Provider value={contextValues}>
             <div className="App">
                 <BrowserRouter forceRefresh={true}>
                     <Switch>

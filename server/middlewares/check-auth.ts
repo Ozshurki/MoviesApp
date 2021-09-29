@@ -2,16 +2,20 @@ const jwt = require('jsonwebtoken');
 const HttpError = require("../models/http-error");
 import {PRIVATE_KEY} from "../controllers/users-controllers";
 
+
 module.exports = (req, res, next) => {
-    let token: string;
-    let decodedToken: string;
+    let token:string;
+    let decodedToken:string;
 
     try {
         token = req.headers.authorization.split(' ')[1];
         if (!token)
-            new Error("Authentication failed");
+            return res.status(401).json({
+                message: "Unauthorized"
+            });
 
-        decodedToken = jwt.verify(token, PRIVATE_KEY);
+        decodedToken = jwt.verify(token, PRIVATE_KEY)
+        res.local.jwt = decodedToken;
         req.userData = {userId: decodedToken};
         next();
 

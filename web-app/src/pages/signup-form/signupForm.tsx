@@ -83,10 +83,7 @@ const Header: React.FC = () => {
                         {({errors, touched}) => (
                             <Form className='form-container' autoComplete='off'>
 
-                                <TextField fieldName='firstName'
-                                           fieldText='First Name'
-                                           placeholder='First name'
-                                           error={getError(errors.firstName, touched.firstName)}/>
+                                <TextField fieldName='firstName' fieldText='First Name'  placeholder='First name' error={getError(errors.firstName, touched.firstName)}/>
 
                                 <TextField fieldName='lastName'
                                            fieldText='Last Name'

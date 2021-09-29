@@ -1,14 +1,11 @@
 import {createContext} from "react";
 
 interface Auth{
-    isLoggedIn:boolean;
-    userId:number;
-    token: number;
+    userId:string | null;
+    token: string | null;
+    isLoggedIn: boolean;
+    login(token:string, uid:string) : void;
+    logout(): void;
 }
-export const AuthContext = createContext({
-    isLoggedIn: false,
-    userId: false,
-    token: false,
-    login: () => {},
-    logout: () => {}
-});
+
+export const AuthContext = createContext<Auth | null>(null);
