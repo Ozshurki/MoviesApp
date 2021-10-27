@@ -6,7 +6,7 @@ import "./main.css"
 const Main: React.FC  = () =>{
     return(
         <div className='main'>
-            <CardsContainer />
+
         </div>
     )
 }

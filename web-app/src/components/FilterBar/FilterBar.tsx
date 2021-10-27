@@ -4,15 +4,12 @@ import * as Yup from 'yup'
 import TextField from "../../components/TextField/TextField";
 import axios from "axios";
 import "./FilterBar.css"
+import {searchInterface} from "../../shared/interfaces/SearchInterface";
 
-interface SearchInt {
-    searchValue: string;
-    setSearchValue: any;
-}
 
-const FilterBar: React.FC<SearchInt> = ({searchValue, setSearchValue}) => {
+const FilterBar: React.FC<searchInterface> = ({searchValue, setSearchValue}) => {
 
-    const initialValues: SearchInt = {
+    const initialValues: searchInterface = {
         searchValue: '',
         setSearchValue: ''
     };
@@ -39,13 +36,18 @@ const FilterBar: React.FC<SearchInt> = ({searchValue, setSearchValue}) => {
         actions.resetForm();
     }
     return (
-        <div className="filter-container">
+        <div className="filter">
             <Formik className="search-form"
                     initialValues={initialValues}
                     onSubmit={onClick}
                     validationSchema={SearchValidate}>
-                {({errors,touched}) => (
-                    <Field type="search" name="search" placeholder="Search" />
+                {({errors, touched}) => (
+                    <Field
+                        className="search-field"
+                        type="search"
+                        name="search"
+                        onChange={(event: any) => setSearchValue(event.target.value)}
+                        placeholder="Search"/>
                 )}
             </Formik>
             <div className="genres">

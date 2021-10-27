@@ -1,17 +1,18 @@
 import React, {useState, useEffect} from 'react'
 import "./CardsContainer.css"
 import Card from "../../../components/Card/Card";
+import {searchInterface} from "../../../shared/interfaces/SearchInterface";
 
-const axios = require('axios');
-
-
-const CardsContainer: React.FC = () => {
+const CardsContainer: React.FC <searchInterface> = ({searchValue}) => {
 
     const [movieList, setMovieList] = useState([]);
-
-    const getMovieRequest = async () => {
+    const getMovieRequest = async (searchValue:string) => {
         type url = string;
-        const url = "https://www.omdbapi.com/?s=spiderman&apikey=2adaebe8";
+
+        if(!searchValue)
+            searchValue = "avengers";
+
+        const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=2adaebe8`;
         const response = await fetch(url);
         const responseJSON = await response.json();
 
@@ -20,8 +21,8 @@ const CardsContainer: React.FC = () => {
     }
 
     useEffect(() => {
-        getMovieRequest();
-    }, [])
+        getMovieRequest(searchValue);
+    }, [searchValue])
     return (
         <div className='cards-container'>
             {movieList.map((movie: any) => {
@@ -32,7 +33,7 @@ const CardsContainer: React.FC = () => {
                 }
             })
 
-            })
+            }
         </div>
     )
 
