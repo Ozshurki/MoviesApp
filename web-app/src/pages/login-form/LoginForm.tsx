@@ -91,7 +91,6 @@ const LoginForm: React.FC = () => {
                         </Form>
                     )}
                 </Formik>
-
                 <div className='signup-btn'>
                     <Link to='/signup' className='register-link'>Create account</Link>
                 </div>

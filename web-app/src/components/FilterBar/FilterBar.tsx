@@ -6,13 +6,15 @@ import axios from "axios";
 import "./FilterBar.css"
 
 interface SearchInt {
-    searchField: string;
+    searchValue: string;
+    setSearchValue: any;
 }
 
-const FilterBar: React.FC = () => {
+const FilterBar: React.FC<SearchInt> = ({searchValue, setSearchValue}) => {
 
     const initialValues: SearchInt = {
-        searchField: ''
+        searchValue: '',
+        setSearchValue: ''
     };
 
     const SearchValidate = Yup.object().shape({
@@ -26,11 +28,9 @@ const FilterBar: React.FC = () => {
     }
 
     const onClick = async (values: any, actions: any) => {
-        const search = values;
-
         try {
             const response = await axios.post('http://localhost:5000/api/search',
-                {searchField: values.searchField})
+                {searchValue: values.searchValue})
         } catch (err) {
             console.log(err);
             return;
@@ -45,11 +45,7 @@ const FilterBar: React.FC = () => {
                     onSubmit={onClick}
                     validationSchema={SearchValidate}>
                 {({errors,touched}) => (
-                    <Form className="search-form" autoComplete="off">
-                        <TextField fieldName="search"
-                                   fieldText=""
-                                   placeholder="Search"/>
-                    </Form>
+                    <Field type="search" name="search" placeholder="Search" />
                 )}
             </Formik>
             <div className="genres">

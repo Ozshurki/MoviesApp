@@ -12,9 +12,9 @@ const MobileNavbar: React.FC =  () =>{
             <ul>
                 <li><HeaderBtn btnName="Home" route="/"/></li>
                 <li><HeaderBtn btnName="Shop" route="/shop"/></li>
-                {!auth?.isLoggedIn && <li><HeaderBtn btnName="Login" route="/login"/></li>}
-                {auth?.isLoggedIn && <li><HeaderBtn btnName="My Cart" route="/cart"/></li>}
-                {auth?.isLoggedIn && <li><HeaderBtn btnName="Logout" route="/"/></li>}
+                {!auth?.token && <li><HeaderBtn btnName="Login" route="/login"/></li>}
+                {auth?.token && <li><HeaderBtn btnName="My Cart" route="/cart"/></li>}
+                {auth?.token && <li><HeaderBtn btnName="Logout" route="/"/></li>}
             </ul>
         </div>
     )

@@ -8,7 +8,6 @@ import TextField from "../../components/TextField/TextField";
 import Loading from "../../components/Loading/Loading"
 import './signupForm.css';
 
-
 const axios = require('axios');
 
 interface FormValues {

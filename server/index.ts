@@ -50,6 +50,3 @@ mongoose.connect('mongodb+srv://ozshurki:ozshu123@cluster0.tkjon.mongodb.net/Use
     });
 
 mongoose.set('useFindAndModify', false);
-
-
-

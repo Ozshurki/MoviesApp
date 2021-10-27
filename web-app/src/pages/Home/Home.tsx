@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from "../../components/header/Header";
 import "./Home.css"
 import SideMenu from "../../components/Side Menu/SideMenu";
@@ -6,6 +6,9 @@ import CardsContainer from "./Cards Container/CardsContainer";
 import FilterBar from "../../components/FilterBar/FilterBar";
 
 const Home: React.FC = () => {
+
+    const [searchValue, setSearchValue] = useState("");
+
     return (
         <div className='home'>
             <div className="header-container">
@@ -13,7 +16,7 @@ const Home: React.FC = () => {
             </div>
             <div className="main-container">
                 <div className="filter">
-                    <FilterBar/>
+                    <FilterBar searchValue={searchValue} setSearchValue={setSearchValue}/>
                 </div>
                 <div className="cards">
                     <CardsContainer/>
