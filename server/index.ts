@@ -4,9 +4,11 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const HttpError = require('./models/http-error');
 import {userRoutes} from './routes/users-routes';
+import {errorHandler} from './middlewares/error-handler'
 
 const app = express();
 
+// Parse request body
 app.use(bodyParser.json());
 app.use(cors());
 
@@ -19,20 +21,10 @@ app.use((req,res,next) =>{
 })
 
 app.use('/api/users', userRoutes);
-app.use((req,res,next) =>{
-    throw new HttpError("Could not find this route", 404);
-})
 
-// Errors middleware
-app.use((error,req,res,next)=>{
-
-    if(res.headerSent)
-        next(error);
-
-    res.status(error.code || 500);
-    res.json({message: error.message});
-})
-
+// Unknown route middleware
+app.use((req,res,next) => {throw new HttpError("Could not find this route", 404)})
+app.use(errorHandler)
 
 // Connection to DataBase
 mongoose.connect('mongodb+srv://ozshurki:ozshu123@cluster0.tkjon.mongodb.net/Users?retryWrites=true&w=majority', {
@@ -42,7 +34,7 @@ mongoose.connect('mongodb+srv://ozshurki:ozshu123@cluster0.tkjon.mongodb.net/Use
 })
     .then(() => {
         app.listen(5000, () => {
-            console.log("Connected to database");
+            console.log("Connected to database successfully");
         })
     })
     .catch(err => {
