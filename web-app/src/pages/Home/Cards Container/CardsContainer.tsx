@@ -3,13 +3,13 @@ import "./CardsContainer.css"
 import Card from "../../../components/Card/Card";
 import {searchInterface} from "../../../shared/interfaces/SearchInterface";
 
-const CardsContainer: React.FC <searchInterface> = ({searchValue}) => {
+const CardsContainer: React.FC<searchInterface> = ({searchValue}) => {
 
     const [movieList, setMovieList] = useState([]);
-    const getMovieRequest = async (searchValue:string) => {
+    const getMovieRequest = async (searchValue: string) => {
         type url = string;
 
-        if(!searchValue)
+        if (!searchValue)
             searchValue = "avengers";
 
         const url = `https://www.omdbapi.com/?s=${searchValue}&apikey=2adaebe8`;
@@ -25,14 +25,18 @@ const CardsContainer: React.FC <searchInterface> = ({searchValue}) => {
     }, [searchValue])
     return (
         <div className='cards-container'>
+            <div className="top"></div>
+            <div className="bottom"></div>
+            <div className="imgWrapper">
+                <img src="https://raw.githubusercontent.com/brixiobodino/coffeholic/main/banner.jpg" alt=""/>
+            </div>
             {movieList.map((movie: any) => {
-                if(movie.Poster.length > 3) {
+                if (movie.Poster.length > 3) {
                     return (
                         <Card company={movie.Title} url={movie.Poster}/>
                     )
                 }
             })
-
             }
         </div>
     )

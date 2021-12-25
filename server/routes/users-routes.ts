@@ -1,11 +1,14 @@
 const express = require('express');
-const checkAuth = require("../../server/middlewares/check-auth");
+const checkAuth = require("../middlewares/check-auth");
 import { signup, getUser, login } from '../controllers/users-controllers'
 
-export const userRoutes = express.Router();
+export const router = express.Router();
 
-userRoutes.post('/login', login);
-userRoutes.post('/signup', signup);
+router.post('/login', login);
+router.post('/signup', signup);
 
-userRoutes.use(checkAuth);
-userRoutes.get('/get-users', getUser);
+// Middleware for route protection (doesnt work)
+router.use(checkAuth);
+router.get('/get-users', getUser);
+
+

@@ -15,9 +15,6 @@ const Home: React.FC = () => {
                 <Header/>
             </div>
             <div className="main-container">
-                <div className="filter-container">
-                    <FilterBar searchValue={searchValue} setSearchValue={setSearchValue}/>
-                </div>
                 <CardsContainer searchValue={searchValue} setSearchValue={setSearchValue}/>
             </div>
         </div>

@@ -10,9 +10,6 @@ const Card: React.FC<{ company: string, url: string }> = (props) => {
                      src={props.url}
                      alt=""/>
             </div>
-            <div className="name-container">
-                <div className='company-name'>{props.company}</div>
-            </div>
         </div>
     )
 }
