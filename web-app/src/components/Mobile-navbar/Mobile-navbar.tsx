@@ -6,7 +6,6 @@ const MobileNavbar: React.FC =  () =>{
 
     const auth = useContext(AuthContext);
 
-
     return(
         <div className="mobile-navbar">
             <ul>

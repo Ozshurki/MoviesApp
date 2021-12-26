@@ -55,7 +55,6 @@ const Header: React.FC = () => {
             setIsLoading(true);
             const response = await axios.post("http://localhost:5000/api/users/signup", data);
             setIsLoading(false);
-            console.log({values, actions});
         } catch (err) {
             console.log(err);
             return;
@@ -77,8 +76,7 @@ const Header: React.FC = () => {
                     </div>
                     <Formik initialValues={initialValues}
                             onSubmit={onClick}
-                            validationSchema={FormValidate}
-                    >
+                            validationSchema={FormValidate}>
                         {({errors, touched}) => (
                             <Form className='form-container' autoComplete='off'>
 

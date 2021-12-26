@@ -25,11 +25,6 @@ const CardsContainer: React.FC<searchInterface> = ({searchValue}) => {
     }, [searchValue])
     return (
         <div className='cards-container'>
-            <div className="top"></div>
-            <div className="bottom"></div>
-            <div className="imgWrapper">
-                <img src="https://raw.githubusercontent.com/brixiobodino/coffeholic/main/banner.jpg" alt=""/>
-            </div>
             {movieList.map((movie: any) => {
                 if (movie.Poster.length > 3) {
                     return (

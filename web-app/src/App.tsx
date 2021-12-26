@@ -1,4 +1,4 @@
-import React, {useState, useCallback} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
 import {Route, Switch, BrowserRouter, Redirect} from 'react-router-dom';
@@ -10,39 +10,43 @@ const App: React.FC = () => {
 
     const [token, setToken] = useState<string | null>(null);
     const [userId, setUserId] = useState<string | null>(null);
+console.log("aaa")
+    const login = useCallback((tempToken:string, uid:string) => {
 
-    const login = useCallback((token:string, uid:string) => {
-        setToken(token);
+        setToken(tempToken);
         setUserId(uid);
     }, []);
+
+    useEffect(()=>{
+        console.log(token)
+    },[token])
 
     const logout = useCallback(() => {
         setToken(null);
         setUserId(null)
     }, []);
 
-    const contextValues = {
-        userId: userId,
-        token: token,
-        isLoggedIn: !!token,
-        login: login,
-        logout: logout
-    }
     return (
-        <AuthContext.Provider value={contextValues}>
+        <AuthContext.Provider value={{
+            userId: userId,
+            token: token,
+            isLoggedIn: !!token,
+            login: login,
+            logout: logout
+        }}>
             <div className="App">
-                <BrowserRouter forceRefresh={true}>
+                <BrowserRouter>
                     <Switch>
                         <Route exact path="/">
                             <Home/>
                         </Route>
-                        <Route path="/login">
+                        <Route exact path="/login">
                             <LoginForm/>
                         </Route>
-                        <Route path="/signup">
+                        <Route exact path="/signup">
                             <RegisterForm/>
                         </Route>
-                        <Route path="/cart">
+                        <Route exact path="/cart">
                             <Cart/>
                         </Route>
                         <Redirect to="/" from="*"/>

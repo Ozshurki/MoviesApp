@@ -46,11 +46,13 @@ const LoginForm: React.FC = () => {
             const response = await axios.post('http://localhost:5000/api/users/login',
                 {email: values.email, password: values.password});
 
-            if (!(response))
+            if (!response)
                 return new Error("Login response fail.")
 
             auth?.login(response.data.token, response.data.userId);
+            console.log(auth?.token)
             setIsLoading(false);
+            console.log("login success")
         } catch (err) {
             console.log(err);
             return;
