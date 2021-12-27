@@ -92,7 +92,7 @@ export const login = async (req, res, next) => {
     try {
         userExists = await User.findOne(({email: email}));
     } catch (err) {
-        const error = new HttpError("Could not login", 500);
+        const error = new HttpError("Could not LoginNavBar", 500);
         return next(error);
     }
 

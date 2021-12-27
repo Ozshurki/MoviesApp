@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../../components/header/Header"
+import CardsContainer from "../Home/Cards Container/CardsContainer";
 import "./Cart.css"
 
 

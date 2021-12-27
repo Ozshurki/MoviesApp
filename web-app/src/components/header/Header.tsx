@@ -2,8 +2,8 @@ import React, {useState, useContext} from 'react'
 import {AuthContext} from '../../shared/context/AuthContext'
 import HeaderBtn from "../Button/Header-Button/Header-btn";
 import {Link} from "react-router-dom";
-import Logo from "./login/Logo";
-import LoginBar from "./login/LoginBar";
+import Logo from "./LoginNavBar/Logo";
+import LoginBar from "./LoginNavBar/LoginBar";
 import "./Header.css";
 
 

@@ -9,8 +9,9 @@ interface ButtonInt{
 }
 const HeaderBtn: React.FC<ButtonInt> = ({btnName, route}:ButtonInt) =>{
 
+
     return(
-        <Link to={route} className='hdr-btn'>{btnName}</Link>
+        <Link to={route} className='hdr-btn' >{btnName}</Link>
     )
 }
 

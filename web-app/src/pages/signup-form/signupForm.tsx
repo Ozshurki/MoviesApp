@@ -61,7 +61,7 @@ const Header: React.FC = () => {
         }
         actions.setSubmitting(false);
         actions.resetForm();
-        history.push('/login');
+        history.push('/LoginNavBar');
     }
 
     return (

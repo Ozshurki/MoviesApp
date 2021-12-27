@@ -10,18 +10,15 @@ const App: React.FC = () => {
 
     const [token, setToken] = useState<string | null>(null);
     const [userId, setUserId] = useState<string | null>(null);
-console.log("aaa")
-    const login = useCallback((tempToken:string, uid:string) => {
 
+    const login = useCallback((tempToken:string, uid:string) => {
+        localStorage.setItem("token", tempToken)
         setToken(tempToken);
         setUserId(uid);
     }, []);
 
-    useEffect(()=>{
-        console.log(token)
-    },[token])
-
     const logout = useCallback(() => {
+        localStorage.removeItem("token")
         setToken(null);
         setUserId(null)
     }, []);
@@ -32,8 +29,7 @@ console.log("aaa")
             token: token,
             isLoggedIn: !!token,
             login: login,
-            logout: logout
-        }}>
+            logout: logout}}>
             <div className="App">
                 <BrowserRouter>
                     <Switch>
