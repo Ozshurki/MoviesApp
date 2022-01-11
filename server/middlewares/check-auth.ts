@@ -4,7 +4,7 @@ import {PRIVATE_KEY} from "../controllers/users-controllers";
 
 
 module.exports = (req, res, next) => {
-    console.log("in check")
+
     let token:string;
     let decodedToken:string;
 

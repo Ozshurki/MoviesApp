@@ -7,15 +7,16 @@ import LoginBar from "./LoginNavBar/LoginBar";
 import "./Header.css";
 
 
-
 const Header: React.FC = () => {
     const auth = useContext(AuthContext)
 
     return (
-        <header className='header'>
-            <Link to="/" className='header-title'>My Movies App</Link>
-            <LoginBar />
-        </header>
+        <div className="header-container">
+            <header className='header'>
+                <Link to="/" className='header-title'>My Movies App</Link>
+                <LoginBar/>
+            </header>
+        </div>
     )
 }
 

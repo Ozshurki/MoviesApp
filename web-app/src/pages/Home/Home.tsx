@@ -9,9 +9,7 @@ const Home: React.FC = () => {
 
     return (
         <div className='home'>
-            <div className="header-container">
-                <Header/>
-            </div>
+            <Header/>
             <div className="main-container">
                 <CardsContainer searchValue={searchValue} setSearchValue={setSearchValue}/>
             </div>

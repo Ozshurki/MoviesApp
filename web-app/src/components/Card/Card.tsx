@@ -1,10 +1,10 @@
-import React, {useContext} from 'react'
+import React, {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 import "./Card.css"
-import { GoInfo,GoDiffAdded } from "react-icons/go";
+import {GoInfo, GoDiffAdded} from "react-icons/go";
 
 
-
-const Card: React.FC<{ company: string, url: string }> = (props) => {
+const Card: React.FC<{ title: string, url: string }> = (props) => {
 
     return (
         <div className='card-container'>
@@ -14,8 +14,12 @@ const Card: React.FC<{ company: string, url: string }> = (props) => {
                      alt=""/>
             </div>
             <div className="card-actions">
-                {localStorage.getItem("token") && <div className="movie-save"><GoDiffAdded color="white" size="2rem"/></div>}
-                <div className="movie-info"><GoInfo color="white" size="2rem"/></div>
+                {localStorage.getItem("token") &&
+                <div className="add-to-cart-btn"><GoDiffAdded color="white" size="2rem"/></div>}
+                <Link className="movie-info"
+                      to={`/movies/${props.title}`}>
+                    <GoInfo color="white" size="2rem"/>
+                </Link>
             </div>
         </div>
     )

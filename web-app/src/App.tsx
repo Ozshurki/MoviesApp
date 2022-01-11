@@ -1,10 +1,12 @@
 import React, {useState, useCallback, useEffect} from 'react';
 import Home from "./pages/Home/Home";
 import Cart from "./pages/Cart/Cart";
+import Movie from "./components/Movie/Movie";
 import {Route, Switch, BrowserRouter, Redirect} from 'react-router-dom';
 import LoginForm from "./pages/login-form/LoginForm";
 import RegisterForm from "./pages/signup-form/signupForm";
 import {AuthContext} from "./shared/context/AuthContext";
+import './App.css'
 
 const App: React.FC = () => {
 
@@ -30,6 +32,7 @@ const App: React.FC = () => {
             isLoggedIn: !!token,
             login: login,
             logout: logout}}>
+
             <div className="App">
                 <BrowserRouter>
                     <Switch>
@@ -41,6 +44,9 @@ const App: React.FC = () => {
                         </Route>
                         <Route exact path="/signup">
                             <RegisterForm/>
+                        </Route>
+                        <Route exact path="/movies/:title">
+                            <Movie/>
                         </Route>
                         <Route exact path="/cart">
                             <Cart/>
