@@ -2,9 +2,9 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    opacity: 0.9;
+    height: 100%;
     overflow: hidden;
     justify-content: space-evenly;
     overflow-y: auto;
-    background-image: linear-gradient(white 20%,black 80%);
+
 }

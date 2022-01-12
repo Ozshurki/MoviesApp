@@ -1,6 +1,8 @@
 .movie-container{
     height: 100%;
     width: 100%;
+    background: linear-gradient(0deg, #282c34 5%,rgba(0,0,0,0.1)) ,url("https://wallpapercave.com/wp/wp2411501.jpg");
+    background-size: cover;
 }
 
 .movie{
@@ -8,6 +10,7 @@
 }
 
 .details{
+    color: white;
     height: 100%;
     display: flex;
     margin-left: 10px;
