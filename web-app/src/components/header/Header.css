@@ -46,6 +46,10 @@
     justify-content: flex-end;
 }
 
+.search-input{
+    border-radius: 5px;
+}
+
 .login-bar {
     width: 20%;
     height: 100%;

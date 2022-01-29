@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import axios from "axios";
-import Header from "../header/Header";
 import './Movie.css'
 
 
@@ -56,7 +55,6 @@ const Movie: React.FC = () => {
 
     return (
         <div className="movie-container">
-            <Header/>
             <div className="movie">
                 <img className="poster" src={movie?.poster} alt="movie"/>
                 <div className="details">

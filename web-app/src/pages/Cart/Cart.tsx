@@ -9,7 +9,6 @@ const Cart: React.FC = () => {
     return (
         <div className="cart-page">
             <div className="header-container">
-                <Header/>
             </div>
         </div>
     )
