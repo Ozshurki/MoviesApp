@@ -48,9 +48,6 @@ const App: React.FC = () => {
                         <Route exact path="/movies/:title">
                             <Movie/>
                         </Route>
-                        <Route exact path="/cart">
-                            <Cart/>
-                        </Route>
                         <Redirect to="/" from="*"/>
                     </Switch>
                 </BrowserRouter>

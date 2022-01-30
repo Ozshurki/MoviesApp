@@ -7,3 +7,7 @@
     justify-content: space-evenly;
     overflow-y: auto;
 }
+
+.error{
+    color: white;
+}

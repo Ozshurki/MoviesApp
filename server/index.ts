@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const HttpError = require('./models/http-error');
 import {router as userRoutes} from './routes/users-routes';
+import {router as cartRoutes} from './routes/cart-routes';
 import {errorHandler} from './middlewares/error-handler'
 
 const app = express();
@@ -21,13 +22,14 @@ app.use((req,res,next) =>{
 })
 
 app.use('/api/users', userRoutes);
+app.use('/api/cart', cartRoutes);
 
 // Unknown route middleware
 app.use((req,res,next) => {throw new HttpError("Could not find this route", 404)})
 app.use(errorHandler)
 
 // Connection to DataBase
-mongoose.connect('mongodb+srv://ozshurki:eTJo2YABFoApshZq@cluster0.tkjon.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://ozshurki:ozshurki@cluster0.tkjon.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true

@@ -1,16 +1,16 @@
 import React from 'react'
 
 interface Props {
-    setSearchValue: (movie: string) => void;
+    searchValueChanged: (movie: string) => void;
 }
 
-const SearchBar: React.FC<Props> = ({setSearchValue}) => {
+const SearchBar: React.FC<Props> = (props) => {
 
     return (
         <input className="search-input"
                type="text"
                placeholder="Search..."
-               onChange={(event) =>{setSearchValue(event.target.value)}}/>
+               onChange={(event) =>{props.searchValueChanged(event.target.value)}}/>
     )
 }
 

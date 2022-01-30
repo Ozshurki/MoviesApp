@@ -7,16 +7,15 @@ interface Props{
     sortByYear: boolean;
 }
 
-const SortMovies: React.FC<Props> = ({setSortByYear, sortByYear}) =>{
+const SortMovies: React.FC<Props> = (props) =>{
 
     const toggleYear = () => {
-        setSortByYear(!sortByYear)
+        props.setSortByYear(!props.sortByYear)
     }
 
     return(
         <div className="sort-container">
             <div className="sort year" onClick={toggleYear}>Year</div>
-            <div className="sort genre">Genre</div>
         </div>
     )
 }
